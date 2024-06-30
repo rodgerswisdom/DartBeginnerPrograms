@@ -40,7 +40,7 @@ void greeting(){
 void number_range() {
   print('Enter the lowest number: ');
   min = int.parse(stdin.readLineSync()!);
-  print('Enter the lowest number: ');
+  print('Enter the highest number: ');
   max = int.parse(stdin.readLineSync()!);
 
   print("Your Range is $min - $max");
@@ -56,32 +56,30 @@ void make_guess() {
   print('Make a Guess and Press Enter: ');
   guess = int.parse(stdin.readLineSync()!);
 
-  print('Your number is $guess');
+  print('Your guess is $guess');
 }
 
-// bug
-String evaluate_guess(){
- 
-    
+// // bug
+ String evaluate_guess() {
+  while (true) {
     make_guess();
- while ( guess != null) {
 
-    if (random_figure == null) {
-      response = 'Nothing entered';
-    }
     if (guess! < random_figure!) {
-      response = 'Very Low!!!. Try again';
-    } else if( guess! > random_figure! ) {
-      response = 'Very High!!!. Try again';
-    } else if( guess! == random_figure! ) {
+      response = 'Very Low!!! Try again';
+    } else if (guess! > random_figure!) {
+      response = 'Very High!!! Try again';
+    } else if (guess! == random_figure!) {
       response = 'Correct!!! :)';
+      break;
     } else {
       response = 'Invalid!!!';
     }
-    make_guess();
+
+    print(response);
   }
- return '$response';
+  return '$response';
 }
+
 
 int main() {
 
@@ -91,7 +89,7 @@ int main() {
   number_range();
   // random_number();
   // make_guess();
-  evaluate_guess();
+  print(evaluate_guess());
 
   return 0;
 }
