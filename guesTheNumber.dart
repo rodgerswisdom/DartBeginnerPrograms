@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 /**
  * computer generates random numbers to some range
@@ -19,8 +20,8 @@ import 'dart:io';
 //Global Variables
 
 String? name;
-int? low, high;
-int? random_number, guess;
+int? min, max;
+int? random_figure, guess;
 
 /**
  * Greeting function
@@ -38,20 +39,26 @@ void greeting(){
 
 void number_range() {
   print('Enter the lowest number: ');
-  low = int.parse(stdin.readLineSync()!);
+  min = int.parse(stdin.readLineSync()!);
   print('Enter the lowest number: ');
-  high = int.parse(stdin.readLineSync()!);
+  max = int.parse(stdin.readLineSync()!);
 
-  print("Your Range is $low - $high");
+  print("Your Range is $min - $max");
 }
 
-
+void random_number() {
+  var random = new Random();
+  random_figure = random.nextInt(max! - min! +1) + min!;
+  print(random_figure);
+}
 
 int main() {
-   print('Guess the Number');
+
+  print('Guess the Number');
   greeting();
   print('Range');
   number_range();
+  // random_number();
 
   return 0;
 }
