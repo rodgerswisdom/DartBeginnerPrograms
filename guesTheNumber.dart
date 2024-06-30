@@ -19,9 +19,9 @@ import 'dart:math';
 
 //Global Variables
 
-String? name;
+String? name, response ;
 int? min, max;
-int? random_figure, guess;
+int? random_figure, guess = 0;
 
 /**
  * Greeting function
@@ -57,6 +57,22 @@ void make_guess() {
   guess = int.parse(stdin.readLineSync()!);
 }
 
+String evaluate_guess(){
+  while ( guess != random_figure) {
+    if (guess! < random_figure!) {
+      response = 'Very Low!!!. Try again';
+    } else if( guess! > random_figure! ) {
+      response = 'Very High!!!. Try again';
+    } else if( guess! == random_figure! ) {
+      response = 'Correct!!! :)';
+    } else {
+      response = 'Invalid!!!';
+    }
+    
+  }
+  return '$response';
+}
+
 int main() {
 
   print('Guess the Number');
@@ -65,6 +81,7 @@ int main() {
   number_range();
   // random_number();
   make_guess();
+  evaluate_guess();
 
   return 0;
 }
