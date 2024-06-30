@@ -57,6 +57,7 @@ void make_guess() {
   guess = int.parse(stdin.readLineSync()!);
 }
 
+// bug
 String evaluate_guess(){
   while ( guess != random_figure) {
     if (guess! < random_figure!) {
