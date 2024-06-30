@@ -52,6 +52,11 @@ void random_number() {
   print(random_figure);
 }
 
+void make_guess() {
+  print('Make a Guess and Press Enter: ');
+  guess = int.parse(stdin.readLineSync()!);
+}
+
 int main() {
 
   print('Guess the Number');
@@ -59,6 +64,7 @@ int main() {
   print('Range');
   number_range();
   // random_number();
+  make_guess();
 
   return 0;
 }
