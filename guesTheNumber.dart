@@ -16,11 +16,17 @@ import 'dart:io';
  * computer prints 14 
  */
 
+//Global Variables
+
+String? name;
+int? low, high;
+int? random_number, guess;
+
 /**
  * Greeting function
  * @name - name of user
  */
-String? name; // Global variable to be able to use in different functions
+ // Global variable to be able to use in different functions
 
 void greeting(){
   print('Enter your name: ');
@@ -30,10 +36,22 @@ void greeting(){
   stdin.readLineSync();
 }
 
-int main() {
+void number_range() {
+  print('Enter the lowest number: ');
+  low = int.parse(stdin.readLineSync()!);
+  print('Enter the lowest number: ');
+  high = int.parse(stdin.readLineSync()!);
 
+  print("Your Range is $low - $high");
+}
+
+
+
+int main() {
+   print('Guess the Number');
   greeting();
-  print('Game about to start');
+  print('Range');
+  number_range();
 
   return 0;
 }
