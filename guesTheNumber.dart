@@ -26,12 +26,14 @@ void greeting(){
   print('Enter your name: ');
   name = stdin.readLineSync();
 
-  print('Hello, $name :)');
+  print('Hello, $name :). Welcome to the Game.Press Enter to continue');
+  stdin.readLineSync();
 }
 
 int main() {
 
   greeting();
+  print('Game about to start');
 
   return 0;
 }
