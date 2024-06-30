@@ -55,11 +55,20 @@ void random_number() {
 void make_guess() {
   print('Make a Guess and Press Enter: ');
   guess = int.parse(stdin.readLineSync()!);
+
+  print('Your number is $guess');
 }
 
 // bug
 String evaluate_guess(){
-  while ( guess != random_figure) {
+ 
+    
+    make_guess();
+ while ( guess != null) {
+
+    if (random_figure == null) {
+      response = 'Nothing entered';
+    }
     if (guess! < random_figure!) {
       response = 'Very Low!!!. Try again';
     } else if( guess! > random_figure! ) {
@@ -69,9 +78,9 @@ String evaluate_guess(){
     } else {
       response = 'Invalid!!!';
     }
-    
+    make_guess();
   }
-  return '$response';
+ return '$response';
 }
 
 int main() {
@@ -81,7 +90,7 @@ int main() {
   print('Range');
   number_range();
   // random_number();
-  make_guess();
+  // make_guess();
   evaluate_guess();
 
   return 0;
